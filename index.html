@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <!--  @fielda METATAGS  -->
+    <!--  @MetaTags  -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Teste de Estágio para a VFlows.">
@@ -10,52 +10,291 @@
     <meta name="robots" content="index, follow">
     <meta name="generator" content="HTML, CSS, JavaScript, JQuery, TOTVS Fluig">
 
-    <!--   @fields FAVICON     -->
+    <!--   @Favicon     -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
 
+    <!--   @Title     -->
     <title>VFlows - Teste Estágio</title>
 </head>
 <body>
 
-<!-- @name App  -->
-<div class="app">
+<!-- @App  -->
+<div class="app container-fluid">
 
-    <!-- @name Header   -->
+    <!-- @Header   -->
     <header class="app__header row">
         <h1 class="title">
             CADASTRO FORNECEDOR/PRODUTO
         </h1>
     </header>
-    <!-- @name Header/  -->
+    <!-- @Header/  -->
 
-    <!--   @name SectionDataVendor  -->
-    <section class="row section-data-vendor">
+    <!--   @SectionDataVendor  -->
+    <form action="POST" class="form form-data-vendor" enctype="multipart/form-data">
+        <section class="row section-data-vendor">
+            <fieldset class="field-group form-group field-data-vendor">
+                <!-- @FieldLegend Data Vendor -->
+                <legend>
+                    <h2>Dados do Fornecedor</h2>
+                </legend>
 
-    </section>
-    <!--   @name SectionDataVendor/  -->
+                <!--  @FieldGroup   -->
+                <div class="row field-group">
+                    <!--  @FormGroup Razão Social -->
+                    <div class="form-group">
+                        <label for="inputCompanyName" id="labelCompanyName">Razão Social</label>
+                        <input type="text" name="inputCompanyName" id="inputCompanyName">
+                    </div>
 
-    <!--   @name SectionProduct  -->
-    <section class="row section-product">
+                    <!--  @FormGroup CNPJ -->
+                    <div class="form-group">
+                        <label for="inputCNPJ" id="labelCNPJ">CNPJ</label>
+                        <input type="text" name="inputCNPJ" id="inputCNPJ">
+                    </div>
+                </div>
 
-    </section>
-    <!--   @name SectionProduct/  -->
+                <!-- @FieldGroup   -->
+                <div class="row field-group">
+                    <!--  @FormGroup Nome Fantasia -->
+                    <div class="form-group">
+                        <label for="inputTradeName" id="labelTradeName">Nome Fantasia</label>
+                        <input type="text" name="inputTradeName" id="inputTradeName">
+                    </div>
 
-    <!--   @name SectionAttachments  -->
-    <section class="row section-attachments">
+                    <!--  @FormGroup Inscrição Estadual -->
+                    <div class="form-group">
+                        <label for="inputStateRegistration" id="labelStateRegistration">Inscrição Estadual</label>
+                        <input type="text" name="inputStateRegistration" id="inputStateRegistration">
+                    </div>
+                </div>
 
-    </section>
-    <!--   @name SectionAttachments/  -->
+                <!-- @FieldGroup   -->
+                <div class="row field-group">
+                    <!--  @FormGroup CEP -->
+                    <div class="form-group">
+                        <label for="inputCEP" id="labelCEP">CEP</label>
+                        <input type="text" name="inputCEP" id="inputCEP"/>
+                    </div>
 
-    <!--   @name BtnSaveVendor  -->
-    <button class="btn btn-success btn-save-vendor">
+                    <!--  @FormGroup Inscrição Municipal -->
+                    <div class="form-group">
+                        <label for="inputMunicipalRegistration" id="labelMunicipalRegistration">Inscrição
+                            Municipal</label>
+                        <input type="text" name="inputMunicipalRegistration" id="inputMunicipalRegistration"/>
+                    </div>
+                </div>
 
-    </button>
-    <!--   @name BtnSaveVendor/  -->
+                <!-- @FieldGroup   -->
+                <div class="row field-group">
+                    <!--  @FormGroup Endereço -->
+                    <div class="form-group">
+                        <label for="inputAddress" id="labelAddress">Endereço</label>
+                        <input type="text" name="inputAddress" id="inputAddress"/>
+                    </div>
+
+                    <!--  @FormGroup Número -->
+                    <div class="form-group">
+                        <label for="inputNumber" id="labelNumber">Número</label>
+                        <input type="text" name="inputNumber" id="inputNumber"/>
+                    </div>
+                </div>
+
+                <!-- @FieldGroup   -->
+                <div class="row field-group">
+                    <!--  @FormGroup Complemento -->
+                    <div class="form-group">
+                        <label for="inputComplement" id="labelComplement">Complemento</label>
+                        <input type="text" name="inputComplement" id="inputComplement"/>
+                    </div>
+                </div>
+
+                <!-- @FieldGroup   -->
+                <div class="row field-group">
+                    <!--  @FormGroup Bairro -->
+                    <div class="form-group">
+                        <label for="inputNeighborhood" id="labelNeighborhood">Bairro</label>
+                        <input type="text" name="inputNeighborhood" id="inputNeighborhood"/>
+                    </div>
+
+                    <!--  @FormGroup Município -->
+                    <div class="form-group">
+                        <label for="inputCity" id="labelCity">Município</label>
+                        <input type="text" name="inputCity" id="inputCity"/>
+                    </div>
+
+                    <!--  @FormGroup Estado -->
+                    <div class="form-group">
+                        <label for="inputState" id="labelState">Estado</label>
+                        <input type="text" name="inputState" id="inputState"/>
+                    </div>
+                </div>
+
+                <!-- @FieldGroup   -->
+                <div class="row field-group">
+                    <!--  @FormGroup Nome da Pessoa de Contato -->
+                    <div class="form-group">
+                        <label for="inputContactName" id="labelContactName">Nome da Pessoa de Contato</label>
+                        <input type="text" name="inputContactName" id="inputContactName"/>
+                    </div>
+
+                    <!--  @FormGroup Telefone -->
+                    <div class="form-group">
+                        <label for="inputPhone" id="labelPhone">Telefone</label>
+                        <input type="text" name="inputPhone" id="inputPhone"/>
+                    </div>
+
+                    <!--  @FormGroup E-mail -->
+                    <div class="form-group">
+                        <label for="inputEmail" id="labelEmail">E-mail</label>
+                        <input type="email" name="inputEmail" id="inputEmail"/>
+                    </div>
+                </div>
+            </fieldset>
+        </section>
+        <!--   @SectionDataVendor/  -->
+
+
+        <!--   @SectionProducts  -->
+        <section class="row section-products">
+            <fieldset class="field-group form-group field-products">
+                <!-- @FieldLegend Produtos -->
+                <legend>
+                    <h2>Produtos</h2>
+                </legend>
+
+                <!-- @FieldGroup Products   -->
+                <div class="row field-products">
+                    <!-- @FieldGroup SingleProduct   -->
+                    <fieldset class="field-group-product">
+                        <legend>
+                            <h2>Produto - 1</h2>
+                        </legend>
+
+                        <div class="form-group">
+                            <!--  @FormGroup Remover Produto -->
+                            <button class="col btn btn-danger btn-remove-product">
+                                Remover
+                            </button>
+
+                            <!-- @ContainerDataProduct -->
+                            <div class="container-data-product">
+                                <figure class="col">
+                                    <img src="" alt="Produto 1">
+                                    <figcaption>Produto 1</figcaption>
+                                </figure>
+
+                                <div class="form-group form-group-data-product">
+                                    <!--  @FormGroup Nome do Produto -->
+                                    <div class="col form-group">
+                                        <label for="inputProductName" id="labelProductName">Nome do Produto</label>
+                                        <input type="text" name="inputProductName" id="inputProductName">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <!--  @FormGroup Unidade de Medida -->
+                                        <div class="col form-group">
+                                            <label for="inputMeasureUnit" id="labelMeasureUnit">Unidade de
+                                                Medida</label>
+                                            <input type="text" name="inputMeasureUnit" id="inputMeasureUnit">
+                                        </div>
+
+                                        <!--  @FormGroup Quantidade em Estoque -->
+                                        <div class="col form-group">
+                                            <label for="inputStockQuantity" id="labelStockQuantity">QDTDE. em
+                                                Estoque</label>
+                                            <input type="number" name="inputStockQuantity" id="inputStockQuantity">
+                                        </div>
+
+                                        <!--  @FormGroup Valor Unitário -->
+                                        <div class="col form-group">
+                                            <label for="inputUnitPrice" id="labelUnitPrice">Valor Unitário</label>
+                                            <input type="number" name="inputUnitPrice" id="inputUnitPrice">
+                                        </div>
+
+                                        <!--  @FormGroup Valor Total -->
+                                        <div class="col form-group">
+                                            <label for="inputTotalPrice" id="labelTotalPrice">Valor Total</label>
+                                            <input type="number" disabled name="inputTotalPrice" id="inputTotalPrice">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- @ContainerDataProduct/ -->
+                        </div>
+                    </fieldset>
+                    <!-- @FieldGroup SingleProduct/   -->
+                </div>
+                <!-- @FieldGroup Products/   -->
+
+                <!--   @BtnAddProduct  -->
+                <button class="btn btn-success btn-add-product">
+                    Adicionar Produto
+                </button>
+                <!--   @BtnAddProduct/  -->
+            </fieldset>
+        </section>
+        <!--   @SectionProducts/  -->
+
+
+        <!--   @SectionAttachments  -->
+        <section class="row section-attachments">
+            <fieldset class="field-group form-group field-attachments">
+                <!-- @FieldLegend Anexos -->
+                <legend>
+                    <h2>Anexos</h2>
+                </legend>
+
+                <!-- @FieldsetAttachments   -->
+                <fieldset class="field-group fieldset-attachments">
+                    <!-- @FieldLegend Itens -->
+                    <legend>
+                        <h3>Itens</h3>
+                    </legend>
+
+                    <!-- @FieldGroup BoxesAttachment -->
+                    <div class="row form-group boxes-attachment">
+                        <!-- @FieldGroup BoxAttachment -->
+                        <div class="row form-group box-attachment">
+                            <!-- @ActionsBar -->
+                            <div class="col-md actions-bar">
+                                <button class="col btn-error btn-delete-attachment">
+                                    Deletar
+                                </button>
+                                <button class="col btn-primary btn-view-attachment">
+                                    Visualizar
+                                </button>
+                            </div>
+
+                            <!-- @AttachmentDetails -->
+                            <p><strong>Documento anexo 1</strong></p>
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- @FieldGroup Attachments/   -->
+
+                <button class="row form-group btn btn-success btn-include-attachment">
+                    Incluir Anexo
+                </button>
+                <upload-component
+                        id="component-upload-attachment"
+                        theme-small="true"
+                        multiple="false"
+                ></upload-component>
+            </fieldset>
+        </section>
+        <!--   @SectionAttachments/  -->
+
+        <!--   @BtnSaveVendor  -->
+        <button class="btn btn-success btn-save-vendor">
+            Salvar Fornecedor
+        </button>
+        <!--   @BtnSaveVendor/  -->
+    </form>
 </div>
-<!--   @name App/  -->
+<!--   @App/  -->
 
 </body>
 </html>
