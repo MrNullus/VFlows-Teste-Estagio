@@ -51,10 +51,9 @@
               name="inputCompanyName"
               required
               aria-required="true"
-              pattern="[A-Z]|[a-z]{2,200}"
-              title="A entrada deve ter entre 2 e 200 caracteres e não deve ter caracteres especiais."
+              pattern="[A-Za-z\s1-9]{2,200}"
+              title="A entrada deve ter entre 2 e 200 caracteres"
             >
-            <span class="error-message" style="color:red; display:none;">A entrada deve ter entre 2 e 200 letras e não ter caracteres especiais .</span>
           </div>
 
           <!--  @FormGroup CNPJ -->
@@ -66,7 +65,7 @@
               id="inputCNPJ"
               required
               aria-required="true"
-              pattern="\d{2}.\d{3}.\d{3}/\d{4}-\d{2}"
+              pattern="\d{14}"
               title="Exemplo a ser inserido: 03535961000199">
           </div>
         </div>
@@ -82,7 +81,7 @@
               id="inputTradeName"
               required
               aria-required="true"
-              pattern=".{1,55}"
+              pattern="[A-Za-z\s]{1,55}"
               title="A entrada deve ter entre 1 e 55 caracteres."
             >
           </div>
@@ -91,10 +90,12 @@
           <div class="form-group">
             <label for="inputStateRegistration" id="labelStateRegistration">Inscrição Estadual</label>
             <input
-              type="text"
+              type="number"
               name="inputStateRegistration"
               id="inputStateRegistration"
-              pattern="\d{2}\d{3}\d{3}\d{4}"
+              min="14"
+              max="14"
+              pattern="\d{14}"
               title="A entrada deve ser númerica: 1111111111111"
             >
           </div>
@@ -125,6 +126,8 @@
               type="text"
               name="inputMunicipalRegistration"
               id="inputMunicipalRegistration"
+              pattern="\d{5,9}"
+              title="A entrada deve ser númerica: 123456"
             >
           </div>
         </div>
@@ -147,9 +150,14 @@
           <div class="form-group">
             <label for="inputNumber" id="labelNumber">Número</label>
             <input
-              type="text"
+              type="number"
               name="inputNumber"
               id="inputNumber"
+              min="1"
+              max="100"
+              required
+              pattern="\d{100}"
+              title="Digite o número da casa, apenas números"
             >
           </div>
         </div>
@@ -159,7 +167,13 @@
           <!--  @FormGroup Complemento -->
           <div class="form-group">
             <label for="inputComplement" id="labelComplement">Complemento</label>
-            <input type="text" name="inputComplement" id="inputComplement"/>
+            <input
+              type="text"
+              name="inputComplement"
+              id="inputComplement"
+              pattern="^[A-Za-z0-9\s]{2,100}$"
+              title="Digite o nome do Estado (entre 2 e 100 caracteres)"
+            >
           </div>
         </div>
 
@@ -168,19 +182,36 @@
           <!--  @FormGroup Bairro -->
           <div class="form-group">
             <label for="inputNeighborhood" id="labelNeighborhood">Bairro</label>
-            <input type="text" name="inputNeighborhood" id="inputNeighborhood"/>
+            <input
+              type="text"
+              name="inputNeighborhood" id="inputNeighborhood"
+              pattern="^[A-Za-z0-9\s]{2,200}$"
+              title="Digite o nome do Estado (entre 2 e 200 caracteres)"
+            >
           </div>
 
           <!--  @FormGroup Município -->
           <div class="form-group">
             <label for="inputCity" id="labelCity">Município</label>
-            <input type="text" name="inputCity" id="inputCity"/>
+            <input
+              type="text"
+              name="inputCity"
+              id="inputCity"
+              pattern="^[A-Za-z\s]{2,200}$"
+              title="Digite o nome do Estado (entre 2 e 200 caracteres, incluindo letras e espaços)"
+            >
           </div>
 
           <!--  @FormGroup Estado -->
           <div class="form-group">
             <label for="inputState" id="labelState">Estado</label>
-            <input type="text" name="inputState" id="inputState"/>
+            <input
+              type="text"
+              name="inputState"
+              id="inputState"
+              pattern="^[A-Za-z\s]{2,100}$"
+              title="Digite o nome do Estado (entre 2 e 100 caracteres, incluindo letras e espaços)"
+            >
           </div>
         </div>
 
@@ -195,6 +226,8 @@
               id="inputContactName"
               required
               aria-required="true"
+              pattern="[A-Za-z\s]{2,200}"
+              title="A entrada deve ter entre 2 e 200 caracteres"
             >
           </div>
 
@@ -207,6 +240,8 @@
               id="inputPhone"
               required
               aria-required="true"
+              pattern="[A-Za-z\s1-9]{2,200}"
+              title="A entrada deve ter entre 2 e 200 caracteres"
             >
           </div>
 
@@ -219,6 +254,7 @@
               id="inputEmail"
               required
               aria-required="true"
+              title="A entrada deve ser um email: fulano@gmail.com"
             >
           </div>
         </div>
@@ -266,6 +302,8 @@
                       id="inputProductName"
                       required
                       aria-required="true"
+                      pattern="[A-Za-z\s1-9]{2,200}"
+                      title="A entrada deve ter entre 2 e 200 caracteres"
                     >
                   </div>
 
@@ -280,6 +318,8 @@
                         id="inputMeasureUnit"
                         required
                         aria-required="true"
+                        pattern="[A-Za-z\s]{2,50}"
+                        title="Digite uma Unidade de Medida válida (2 a 50 caracteres, incluindo letras e espaços)"
                       >
                     </div>
 
@@ -293,6 +333,7 @@
                         id="inputStockQuantity"
                         required
                         aria-required="true"
+                        min="0" step="1"
                       >
                     </div>
 
@@ -300,11 +341,13 @@
                     <div class="col form-group">
                       <label for="inputUnitPrice" id="labelUnitPrice">Valor Unitário</label>
                       <input
-                        type="number"
+                        type="text"
                         name="inputUnitPrice"
                         id="inputUnitPrice"
                         required
                         aria-required="true"
+                        pattern="^\d{1,9}(\.\d{2})?$"
+                        title="Digite um Valor Unitário válido (máximo 9 dígitos, com até 2 casas decimais)" r
                       >
                     </div>
 
