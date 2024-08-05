@@ -23,8 +23,7 @@ class ValidatorForm {
       "ProductName",
       "MeasureUnit",
       "StockQuantity",
-      "UnitPrice",
-      "TotalPrice"
+      "UnitPrice"
     ];
     this.form = form;
     console.log(form.elements.length);
@@ -40,34 +39,27 @@ class ValidatorForm {
 
       // Se o campo estiver vazio, mostrar um alerta e retornar false para não enviar o formulário
       if (this.isEmpty(this.form.elements[inputName].value)) {
-        const textLabel = $(`label${field}`).text();
-        $(`#${inputName}`).after(`
-            <div class="alert alert-danger" role="alert">
-                Por favor, preencha o campo ${textLabel}.
-            </div>
+        const textLabel = $(`label[for="${inputName}"]`).text();
+        const $alertDiv = $(`
+          <div class="alert alert-danger" role="alert">
+            Por favor, preencha o campo corretamente ${textLabel}.
+          </div>
         `);
 
-        return false;
+        $(`#${inputName}`).after($alertDiv);
+
+        // Definir um intervalo de tempo para a mensagem de alerta desaparecer
+        const alertTimeout = setTimeout(function () {
+          $alertDiv.fadeOut(function () {
+            $alertDiv.remove();
+          });
+        }, 5000); // 5 segundos
       }
     });
   }
 
-
-  checkRulesByField(field, rule) {
-    if (field === "CNPJ" && rule.test(field.value)) {
-      const textLabel = $(`label${field}`).text();
-      $(`#${inputName}`).after(`
-         <div class="alert alert-danger" role="alert">
-            Por favor, preencha o campo corretamente ${textLabel}.
-        </div>
-      `);
-    }
-
-  }
-
   validate() {
     this.checkRequiredFields();
-    this.checkRulesByField();
   }
 
 }
