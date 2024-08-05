@@ -11,12 +11,21 @@
   <meta name="generator" content="HTML, CSS, JavaScript, JQuery, TOTVS Fluig">
 
   <!--   @Favicon     -->
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="public/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="public/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/images/favicon/favicon-16x16.png">
 
   <!--   @Title     -->
   <title>VFlows - Teste Estágio</title>
+
+  <!--   @JQuery   -->
+  <script src="
+  https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js
+  "></script>
+
+  <!--   @Customs JS    -->
+  <script src="./src/services/Validator.js"></script>
+  <script src="./src/main.js"></script>
 </head>
 <body>
 
@@ -157,7 +166,7 @@
               max="100"
               required
               pattern="\d{100}"
-              title="Digite o número da casa, apenas números"
+              title="Digite o número da casa"
             >
           </div>
         </div>
@@ -313,7 +322,7 @@
                       <label for="inputMeasureUnit" id="labelMeasureUnit">Unidade de
                         Medida</label>
                       <input
-                        type="text"
+                        type=   "text"
                         name="inputMeasureUnit"
                         id="inputMeasureUnit"
                         required
@@ -434,7 +443,7 @@
     <!--   @SectionAttachments/  -->
 
     <!--   @BtnSaveVendor  -->
-    <button class="btn btn-success btn-save-vendor">
+    <button type="submit" class="btn btn-success btn-save-vendor">
       Salvar Fornecedor
     </button>
     <!--   @BtnSaveVendor/  -->
