@@ -1,300 +1,453 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <!--  @MetaTags  -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Teste de Estágio para a VFlows.">
-    <meta name="keywords" content="VFlows, Teste Estágio, desenvolvimento web, aplicativos mobile, Fluig">
-    <meta name="author" content="Gustavo Henrique de Jesus da Silva">
-    <meta name="robots" content="index, follow">
-    <meta name="generator" content="HTML, CSS, JavaScript, JQuery, TOTVS Fluig">
+  <!--  @MetaTags  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Teste de Estágio para a VFlows.">
+  <meta name="keywords" content="VFlows, Teste Estágio, desenvolvimento web, aplicativos mobile, Fluig">
+  <meta name="author" content="Gustavo Henrique de Jesus da Silva">
+  <meta name="robots" content="index, follow">
+  <meta name="generator" content="HTML, CSS, JavaScript, JQuery, TOTVS Fluig">
 
-    <!--   @Favicon     -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+  <!--   @Favicon     -->
+  <link rel="apple-touch-icon" sizes="180x180" href="public/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="public/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/images/favicon/favicon-16x16.png">
 
-    <!--   @Title     -->
-    <title>VFlows - Teste Estágio</title>
+  <!--   @Title     -->
+  <title>VFlows - Teste Estágio</title>
+
+  <!--   @JQuery   -->
+  <script src="
+  https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js
+  "></script>
+
+  <!--   @Customs JS    -->
+  <script src="./src/services/Validator.js"></script>
+  <script src="./src/main.js"></script>
 </head>
 <body>
 
 <!-- @App  -->
 <div class="app container-fluid">
 
-    <!-- @Header   -->
-    <header class="app__header row">
-        <h1 class="title">
-            CADASTRO FORNECEDOR/PRODUTO
-        </h1>
-    </header>
-    <!-- @Header/  -->
+  <!-- @Header   -->
+  <header class="app__header row">
+    <h1 class="title">
+      CADASTRO FORNECEDOR/PRODUTO
+    </h1>
+  </header>
+  <!-- @Header/  -->
 
-    <!--   @SectionDataVendor  -->
-    <form action="POST" class="form form-data-vendor" enctype="multipart/form-data">
-        <section class="row section-data-vendor">
-            <fieldset class="field-group form-group field-data-vendor">
-                <!-- @FieldLegend Data Vendor -->
-                <legend>
-                    <h2>Dados do Fornecedor</h2>
-                </legend>
+  <!--   @SectionDataVendor  -->
+  <form method="POST" class="form form-data-vendor" enctype="multipart/form-data">
+    <section class="row section-data-vendor">
+      <fieldset class="field-group form-group field-data-vendor">
+        <!-- @FieldLegend Data Vendor -->
+        <legend>
+          <h2>Dados do Fornecedor</h2>
+        </legend>
 
-                <!--  @FieldGroup   -->
-                <div class="row field-group">
-                    <!--  @FormGroup Razão Social -->
-                    <div class="form-group">
-                        <label for="inputCompanyName" id="labelCompanyName">Razão Social</label>
-                        <input type="text" name="inputCompanyName" id="inputCompanyName">
+        <!--  @FieldGroup   -->
+        <div class="row field-group">
+          <!--  @FormGroup Razão Social -->
+          <div class="form-group">
+            <label for="inputCompanyName" id="labelCompanyName">Razão Social</label>
+            <input
+              type="text"
+              id="inputCompanyName"
+              name="inputCompanyName"
+              required
+              aria-required="true"
+              pattern="[A-Za-z\s1-9]{2,200}"
+              title="A entrada deve ter entre 2 e 200 caracteres"
+            >
+          </div>
+
+          <!--  @FormGroup CNPJ -->
+          <div class="form-group">
+            <label for="inputCNPJ" id="labelCNPJ">CNPJ</label>
+            <input
+              type="text"
+              name="inputCNPJ"
+              id="inputCNPJ"
+              required
+              aria-required="true"
+              pattern="\d{14}"
+              title="Exemplo a ser inserido: 03535961000199">
+          </div>
+        </div>
+
+        <!-- @FieldGroup   -->
+        <div class="row field-group">
+          <!--  @FormGroup Nome Fantasia -->
+          <div class="form-group">
+            <label for="inputTradeName" id="labelTradeName">Nome Fantasia</label>
+            <input
+              type="text"
+              name="inputTradeName"
+              id="inputTradeName"
+              required
+              aria-required="true"
+              pattern="[A-Za-z\s]{1,55}"
+              title="A entrada deve ter entre 1 e 55 caracteres."
+            >
+          </div>
+
+          <!--  @FormGroup Inscrição Estadual -->
+          <div class="form-group">
+            <label for="inputStateRegistration" id="labelStateRegistration">Inscrição Estadual</label>
+            <input
+              type="number"
+              name="inputStateRegistration"
+              id="inputStateRegistration"
+              min="14"
+              max="14"
+              pattern="\d{14}"
+              title="A entrada deve ser númerica: 1111111111111"
+            >
+          </div>
+        </div>
+
+        <!-- @FieldGroup   -->
+        <div class="row field-group">
+          <!--  @FormGroup CEP -->
+          <div class="form-group">
+            <label for="inputCEP" id="labelCEP">CEP</label>
+            <input
+              type="text"
+              name="inputCEP"
+              id="inputCEP"
+              required
+              aria-required="true"
+              pattern="\d{8}"
+              title="A entrada deve ser númerica: 12345678"
+            >
+          </div>
+
+          <!--  @FormGroup Inscrição Municipal -->
+          <div class="form-group">
+            <label for="inputMunicipalRegistration" id="labelMunicipalRegistration">
+              Inscrição Municipal
+            </label>
+            <input
+              type="text"
+              name="inputMunicipalRegistration"
+              id="inputMunicipalRegistration"
+              pattern="\d{5,9}"
+              title="A entrada deve ser númerica: 123456"
+            >
+          </div>
+        </div>
+
+        <!-- @FieldGroup   -->
+        <div class="row field-group">
+          <!--  @FormGroup Endereço -->
+          <div class="form-group">
+            <label for="inputAddress" id="labelAddress">Endereço</label>
+            <input
+              type="text"
+              name="inputAddress"
+              id="inputAddress"
+              required
+              aria-required="true"
+            >
+          </div>
+
+          <!--  @FormGroup Número -->
+          <div class="form-group">
+            <label for="inputNumber" id="labelNumber">Número</label>
+            <input
+              type="number"
+              name="inputNumber"
+              id="inputNumber"
+              min="1"
+              max="100"
+              required
+              pattern="\d{100}"
+              title="Digite o número da casa"
+            >
+          </div>
+        </div>
+
+        <!-- @FieldGroup   -->
+        <div class="row field-group">
+          <!--  @FormGroup Complemento -->
+          <div class="form-group">
+            <label for="inputComplement" id="labelComplement">Complemento</label>
+            <input
+              type="text"
+              name="inputComplement"
+              id="inputComplement"
+              pattern="^[A-Za-z0-9\s]{2,100}$"
+              title="Digite o nome do Estado (entre 2 e 100 caracteres)"
+            >
+          </div>
+        </div>
+
+        <!-- @FieldGroup   -->
+        <div class="row field-group">
+          <!--  @FormGroup Bairro -->
+          <div class="form-group">
+            <label for="inputNeighborhood" id="labelNeighborhood">Bairro</label>
+            <input
+              type="text"
+              name="inputNeighborhood" id="inputNeighborhood"
+              pattern="^[A-Za-z0-9\s]{2,200}$"
+              title="Digite o nome do Estado (entre 2 e 200 caracteres)"
+            >
+          </div>
+
+          <!--  @FormGroup Município -->
+          <div class="form-group">
+            <label for="inputCity" id="labelCity">Município</label>
+            <input
+              type="text"
+              name="inputCity"
+              id="inputCity"
+              pattern="^[A-Za-z\s]{2,200}$"
+              title="Digite o nome do Estado (entre 2 e 200 caracteres, incluindo letras e espaços)"
+            >
+          </div>
+
+          <!--  @FormGroup Estado -->
+          <div class="form-group">
+            <label for="inputState" id="labelState">Estado</label>
+            <input
+              type="text"
+              name="inputState"
+              id="inputState"
+              pattern="^[A-Za-z\s]{2,100}$"
+              title="Digite o nome do Estado (entre 2 e 100 caracteres, incluindo letras e espaços)"
+            >
+          </div>
+        </div>
+
+        <!-- @FieldGroup   -->
+        <div class="row field-group">
+          <!--  @FormGroup Nome da Pessoa de Contato -->
+          <div class="form-group">
+            <label for="inputContactName" id="labelContactName">Nome da Pessoa de Contato</label>
+            <input
+              type="text"
+              name="inputContactName"
+              id="inputContactName"
+              required
+              aria-required="true"
+              pattern="[A-Za-z\s]{2,200}"
+              title="A entrada deve ter entre 2 e 200 caracteres"
+            >
+          </div>
+
+          <!--  @FormGroup Telefone -->
+          <div class="form-group">
+            <label for="inputPhone" id="labelPhone">Telefone</label>
+            <input
+              type="text"
+              name="inputPhone"
+              id="inputPhone"
+              required
+              aria-required="true"
+              pattern="[A-Za-z\s1-9]{2,200}"
+              title="A entrada deve ter entre 2 e 200 caracteres"
+            >
+          </div>
+
+          <!--  @FormGroup E-mail -->
+          <div class="form-group">
+            <label for="inputEmail" id="labelEmail">E-mail</label>
+            <input
+              type="email"
+              name="inputEmail"
+              id="inputEmail"
+              required
+              aria-required="true"
+              title="A entrada deve ser um email: fulano@gmail.com"
+            >
+          </div>
+        </div>
+      </fieldset>
+    </section>
+    <!--   @SectionDataVendor/  -->
+
+
+    <!--   @SectionProducts  -->
+    <section class="row section-products">
+      <fieldset class="field-group form-group field-products">
+        <!-- @FieldLegend Produtos -->
+        <legend>
+          <h2>Produtos</h2>
+        </legend>
+
+        <!-- @FieldGroup Products   -->
+        <div class="row field-products">
+          <!-- @FieldGroup SingleProduct   -->
+          <fieldset class="field-group-product">
+            <legend>
+              <h2>Produto - 1</h2>
+            </legend>
+
+            <div class="form-group">
+              <!--  @FormGroup Remover Produto -->
+              <button class="col btn btn-danger btn-remove-product">
+                Remover
+              </button>
+
+              <!-- @ContainerDataProduct -->
+              <div class="container-data-product">
+                <figure class="col">
+                  <img src="" alt="Produto 1">
+                  <figcaption>Produto 1</figcaption>
+                </figure>
+
+                <div class="form-group form-group-data-product">
+                  <!--  @FormGroup Nome do Produto -->
+                  <div class="col form-group">
+                    <label for="inputProductName" id="labelProductName">Nome do Produto</label>
+                    <input
+                      type="text"
+                      name="inputProductName"
+                      id="inputProductName"
+                      required
+                      aria-required="true"
+                      pattern="[A-Za-z\s1-9]{2,200}"
+                      title="A entrada deve ter entre 2 e 200 caracteres"
+                    >
+                  </div>
+
+                  <div class="form-group">
+                    <!--  @FormGroup Unidade de Medida -->
+                    <div class="col form-group">
+                      <label for="inputMeasureUnit" id="labelMeasureUnit">Unidade de
+                        Medida</label>
+                      <input
+                        type=   "text"
+                        name="inputMeasureUnit"
+                        id="inputMeasureUnit"
+                        required
+                        aria-required="true"
+                        pattern="[A-Za-z\s]{2,50}"
+                        title="Digite uma Unidade de Medida válida (2 a 50 caracteres, incluindo letras e espaços)"
+                      >
                     </div>
 
-                    <!--  @FormGroup CNPJ -->
-                    <div class="form-group">
-                        <label for="inputCNPJ" id="labelCNPJ">CNPJ</label>
-                        <input type="text" name="inputCNPJ" id="inputCNPJ">
+                    <!--  @FormGroup Quantidade em Estoque -->
+                    <div class="col form-group">
+                      <label for="inputStockQuantity" id="labelStockQuantity">QDTDE. em
+                        Estoque</label>
+                      <input
+                        type="number"
+                        name="inputStockQuantity"
+                        id="inputStockQuantity"
+                        required
+                        aria-required="true"
+                        min="0" step="1"
+                      >
                     </div>
+
+                    <!--  @FormGroup Valor Unitário -->
+                    <div class="col form-group">
+                      <label for="inputUnitPrice" id="labelUnitPrice">Valor Unitário</label>
+                      <input
+                        type="text"
+                        name="inputUnitPrice"
+                        id="inputUnitPrice"
+                        required
+                        aria-required="true"
+                        pattern="^\d{1,9}(\.\d{2})?$"
+                        title="Digite um Valor Unitário válido (máximo 9 dígitos, com até 2 casas decimais)"
+                      >
+                    </div>
+
+                    <!--  @FormGroup Valor Total -->
+                    <div class="col form-group">
+                      <label for="inputTotalPrice" id="labelTotalPrice">Valor Total</label>
+                      <input
+                        type="number"
+                        name="inputTotalPrice"
+                        id="inputTotalPrice"
+                        disabled
+                        required
+                        aria-required="true"
+                      >
+                    </div>
+                  </div>
                 </div>
+              </div>
+              <!-- @ContainerDataProduct/ -->
+            </div>
+          </fieldset>
+          <!-- @FieldGroup SingleProduct/   -->
+        </div>
+        <!-- @FieldGroup Products/   -->
 
-                <!-- @FieldGroup   -->
-                <div class="row field-group">
-                    <!--  @FormGroup Nome Fantasia -->
-                    <div class="form-group">
-                        <label for="inputTradeName" id="labelTradeName">Nome Fantasia</label>
-                        <input type="text" name="inputTradeName" id="inputTradeName">
-                    </div>
-
-                    <!--  @FormGroup Inscrição Estadual -->
-                    <div class="form-group">
-                        <label for="inputStateRegistration" id="labelStateRegistration">Inscrição Estadual</label>
-                        <input type="text" name="inputStateRegistration" id="inputStateRegistration">
-                    </div>
-                </div>
-
-                <!-- @FieldGroup   -->
-                <div class="row field-group">
-                    <!--  @FormGroup CEP -->
-                    <div class="form-group">
-                        <label for="inputCEP" id="labelCEP">CEP</label>
-                        <input type="text" name="inputCEP" id="inputCEP"/>
-                    </div>
-
-                    <!--  @FormGroup Inscrição Municipal -->
-                    <div class="form-group">
-                        <label for="inputMunicipalRegistration" id="labelMunicipalRegistration">Inscrição
-                            Municipal</label>
-                        <input type="text" name="inputMunicipalRegistration" id="inputMunicipalRegistration"/>
-                    </div>
-                </div>
-
-                <!-- @FieldGroup   -->
-                <div class="row field-group">
-                    <!--  @FormGroup Endereço -->
-                    <div class="form-group">
-                        <label for="inputAddress" id="labelAddress">Endereço</label>
-                        <input type="text" name="inputAddress" id="inputAddress"/>
-                    </div>
-
-                    <!--  @FormGroup Número -->
-                    <div class="form-group">
-                        <label for="inputNumber" id="labelNumber">Número</label>
-                        <input type="text" name="inputNumber" id="inputNumber"/>
-                    </div>
-                </div>
-
-                <!-- @FieldGroup   -->
-                <div class="row field-group">
-                    <!--  @FormGroup Complemento -->
-                    <div class="form-group">
-                        <label for="inputComplement" id="labelComplement">Complemento</label>
-                        <input type="text" name="inputComplement" id="inputComplement"/>
-                    </div>
-                </div>
-
-                <!-- @FieldGroup   -->
-                <div class="row field-group">
-                    <!--  @FormGroup Bairro -->
-                    <div class="form-group">
-                        <label for="inputNeighborhood" id="labelNeighborhood">Bairro</label>
-                        <input type="text" name="inputNeighborhood" id="inputNeighborhood"/>
-                    </div>
-
-                    <!--  @FormGroup Município -->
-                    <div class="form-group">
-                        <label for="inputCity" id="labelCity">Município</label>
-                        <input type="text" name="inputCity" id="inputCity"/>
-                    </div>
-
-                    <!--  @FormGroup Estado -->
-                    <div class="form-group">
-                        <label for="inputState" id="labelState">Estado</label>
-                        <input type="text" name="inputState" id="inputState"/>
-                    </div>
-                </div>
-
-                <!-- @FieldGroup   -->
-                <div class="row field-group">
-                    <!--  @FormGroup Nome da Pessoa de Contato -->
-                    <div class="form-group">
-                        <label for="inputContactName" id="labelContactName">Nome da Pessoa de Contato</label>
-                        <input type="text" name="inputContactName" id="inputContactName"/>
-                    </div>
-
-                    <!--  @FormGroup Telefone -->
-                    <div class="form-group">
-                        <label for="inputPhone" id="labelPhone">Telefone</label>
-                        <input type="text" name="inputPhone" id="inputPhone"/>
-                    </div>
-
-                    <!--  @FormGroup E-mail -->
-                    <div class="form-group">
-                        <label for="inputEmail" id="labelEmail">E-mail</label>
-                        <input type="email" name="inputEmail" id="inputEmail"/>
-                    </div>
-                </div>
-            </fieldset>
-        </section>
-        <!--   @SectionDataVendor/  -->
-
-
-        <!--   @SectionProducts  -->
-        <section class="row section-products">
-            <fieldset class="field-group form-group field-products">
-                <!-- @FieldLegend Produtos -->
-                <legend>
-                    <h2>Produtos</h2>
-                </legend>
-
-                <!-- @FieldGroup Products   -->
-                <div class="row field-products">
-                    <!-- @FieldGroup SingleProduct   -->
-                    <fieldset class="field-group-product">
-                        <legend>
-                            <h2>Produto - 1</h2>
-                        </legend>
-
-                        <div class="form-group">
-                            <!--  @FormGroup Remover Produto -->
-                            <button class="col btn btn-danger btn-remove-product">
-                                Remover
-                            </button>
-
-                            <!-- @ContainerDataProduct -->
-                            <div class="container-data-product">
-                                <figure class="col">
-                                    <img src="" alt="Produto 1">
-                                    <figcaption>Produto 1</figcaption>
-                                </figure>
-
-                                <div class="form-group form-group-data-product">
-                                    <!--  @FormGroup Nome do Produto -->
-                                    <div class="col form-group">
-                                        <label for="inputProductName" id="labelProductName">Nome do Produto</label>
-                                        <input type="text" name="inputProductName" id="inputProductName">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <!--  @FormGroup Unidade de Medida -->
-                                        <div class="col form-group">
-                                            <label for="inputMeasureUnit" id="labelMeasureUnit">Unidade de
-                                                Medida</label>
-                                            <input type="text" name="inputMeasureUnit" id="inputMeasureUnit">
-                                        </div>
-
-                                        <!--  @FormGroup Quantidade em Estoque -->
-                                        <div class="col form-group">
-                                            <label for="inputStockQuantity" id="labelStockQuantity">QDTDE. em
-                                                Estoque</label>
-                                            <input type="number" name="inputStockQuantity" id="inputStockQuantity">
-                                        </div>
-
-                                        <!--  @FormGroup Valor Unitário -->
-                                        <div class="col form-group">
-                                            <label for="inputUnitPrice" id="labelUnitPrice">Valor Unitário</label>
-                                            <input type="number" name="inputUnitPrice" id="inputUnitPrice">
-                                        </div>
-
-                                        <!--  @FormGroup Valor Total -->
-                                        <div class="col form-group">
-                                            <label for="inputTotalPrice" id="labelTotalPrice">Valor Total</label>
-                                            <input type="number" disabled name="inputTotalPrice" id="inputTotalPrice">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- @ContainerDataProduct/ -->
-                        </div>
-                    </fieldset>
-                    <!-- @FieldGroup SingleProduct/   -->
-                </div>
-                <!-- @FieldGroup Products/   -->
-
-                <!--   @BtnAddProduct  -->
-                <button class="btn btn-success btn-add-product">
-                    Adicionar Produto
-                </button>
-                <!--   @BtnAddProduct/  -->
-            </fieldset>
-        </section>
-        <!--   @SectionProducts/  -->
-
-
-        <!--   @SectionAttachments  -->
-        <section class="row section-attachments">
-            <fieldset class="field-group form-group field-attachments">
-                <!-- @FieldLegend Anexos -->
-                <legend>
-                    <h2>Anexos</h2>
-                </legend>
-
-                <!-- @FieldsetAttachments   -->
-                <fieldset class="field-group fieldset-attachments">
-                    <!-- @FieldLegend Itens -->
-                    <legend>
-                        <h3>Itens</h3>
-                    </legend>
-
-                    <!-- @FieldGroup BoxesAttachment -->
-                    <div class="row form-group boxes-attachment">
-                        <!-- @FieldGroup BoxAttachment -->
-                        <div class="row form-group box-attachment">
-                            <!-- @ActionsBar -->
-                            <div class="col-md actions-bar">
-                                <button class="col btn-error btn-delete-attachment">
-                                    Deletar
-                                </button>
-                                <button class="col btn-primary btn-view-attachment">
-                                    Visualizar
-                                </button>
-                            </div>
-
-                            <!-- @AttachmentDetails -->
-                            <p><strong>Documento anexo 1</strong></p>
-                        </div>
-                    </div>
-                </fieldset>
-                <!-- @FieldGroup Attachments/   -->
-
-                <!-- @BtnIncludeAttachment   -->
-                <button class="row form-group btn btn-success btn-include-attachment">
-                    Incluir Anexo
-                </button>
-                <upload-component
-                        id="component-upload-attachment"
-                        theme-small="true"
-                        multiple="false"
-                ></upload-component>
-                <!-- @BtnIncludeAttachment/   -->
-            </fieldset>
-        </section>
-        <!--   @SectionAttachments/  -->
-
-        <!--   @BtnSaveVendor  -->
-        <button class="btn btn-success btn-save-vendor">
-            Salvar Fornecedor
+        <!--   @BtnAddProduct  -->
+        <button class="btn btn-success btn-add-product">
+          Adicionar Produto
         </button>
-        <!--   @BtnSaveVendor/  -->
-    </form>
+        <!--   @BtnAddProduct/  -->
+      </fieldset>
+    </section>
+    <!--   @SectionProducts/  -->
+
+
+    <!--   @SectionAttachments  -->
+    <section class="row section-attachments">
+      <fieldset class="field-group form-group field-attachments">
+        <!-- @FieldLegend Anexos -->
+        <legend>
+          <h2>Anexos</h2>
+        </legend>
+
+        <!-- @FieldsetAttachments   -->
+        <fieldset class="field-group fieldset-attachments">
+          <!-- @FieldLegend Itens -->
+          <legend>
+            <h3>Itens</h3>
+          </legend>
+
+          <!-- @FieldGroup BoxesAttachment -->
+          <div class="row form-group boxes-attachment">
+            <!-- @FieldGroup BoxAttachment -->
+            <div class="row form-group box-attachment">
+              <!-- @ActionsBar -->
+              <div class="col-md actions-bar">
+                <button class="col btn-error btn-delete-attachment">
+                  Deletar
+                </button>
+                <button class="col btn-primary btn-view-attachment">
+                  Visualizar
+                </button>
+              </div>
+
+              <!-- @AttachmentDetails -->
+              <p><strong>Documento anexo 1</strong></p>
+            </div>
+          </div>
+        </fieldset>
+        <!-- @FieldGroup Attachments/   -->
+
+        <!-- @BtnIncludeAttachment   -->
+        <button class="row form-group btn btn-success btn-include-attachment">
+          Incluir Anexo
+        </button>
+        <!--                <upload-component-->
+        <!--                        id="component-upload-attachment"-->
+        <!--                        theme-small="true"-->
+        <!--                        multiple="false"-->
+        <!--                ></upload-component>-->
+        <!-- @BtnIncludeAttachment/   -->
+      </fieldset>
+    </section>
+    <!--   @SectionAttachments/  -->
+
+    <!--   @BtnSaveVendor  -->
+    <button type="submit" class="btn btn-success btn-save-vendor">
+      Salvar Fornecedor
+    </button>
+    <!--   @BtnSaveVendor/  -->
+  </form>
 </div>
 <!--   @App/  -->
 
