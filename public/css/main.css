@@ -1,0 +1,47 @@
+:root {
+  --white-primary: rgb(255, 255, 255);
+  --black-primary: rgb(0, 0, 0);
+  --gray-primary: rgb(171, 172, 158);
+  --red-primary: rgb(194, 0, 0);
+  --blue-primary: rgb(54, 134, 179);
+  --pink-primary: #877FCC;
+}
+
+.panel-heading {
+  background-color: var(--blue-primary) !important;
+  color: var(--white-primary) !important;
+}
+
+.field-group-product,
+.fieldset-attachments{
+  display: block !important;
+  margin-inline-start: 2px !important;
+  margin-inline-end: 2px !important;
+  padding-block-start: 0.35em !important;
+  padding-inline-start: 0.75em !important;
+  padding-inline-end: 0.75em !important;
+  padding-block-end: 0.625em !important;
+  min-inline-size: min-content !important;
+  border-width: 2px !important;
+  border-style: groove !important;
+  border-color: rgb(192, 192, 192) !important;
+  border-image: initial !important;
+  position: relative;
+  border-radius: 1rem !important;
+  width: 100% !important;
+}
+
+.field-group-product legend,
+.fieldset-attachments legend{
+  position: relative;
+  top: -20px;
+  width: auto;
+  background: var(--white-primary);
+  border: none;
+}
+
+.img-product {
+  background: var(--pink-primary);
+  padding: 1rem;
+  border-radius: 50%;
+}

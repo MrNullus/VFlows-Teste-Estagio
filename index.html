@@ -15,6 +15,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./public/images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./public/images/favicon/favicon-16x16.png">
 
+  <link href="./public/css/libs/bootstrap.min.css" rel="stylesheet">
+  <script src="./src/libs/bootstrap.bundle.min.js"></script>
+
+  <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-straight/css/uicons-regular-straight.css'>
+
   <!--   @Title     -->
   <title>VFlows - Teste Estágio</title>
 
@@ -30,15 +36,15 @@
   <script src="./src/libs/fluig-style-guide.min.js"></script>
 
   <!--   @Customs CSS   -->
-  <link rel="stylesheet" type="text/css" href="./public/styles/main.css">
+  <link rel="stylesheet" type="text/css" href="public/css/main.css">
   <!--   @Customs JS    -->
   <script src="./src/services/Validator.js"></script>
   <script src="./src/main.js"></script>
 </head>
-<body class="fluig-style-guide">
 
+<body>
 <!-- @App  -->
-<div class="app container-fluid">
+<div class="app fluig-style-guide">
 
   <!-- @Header   -->
   <header class="app__header page-header">
@@ -49,19 +55,18 @@
   <!-- @Header/  -->
 
   <!--   @SectionDataVendor  -->
-  <form method="POST" class=" form-data-vendor" enctype="multipart/form-data">
-    <section class="panel panel-success section-data-vendor">
-      <fieldset class="field-data-vendor">
-        <!-- @FieldLegend Data Vendor -->
-        <legend>
-          <h2>Dados do Fornecedor</h2>
+  <form method="POST" class="pb-5 px-4 form-data-vendor" enctype="multipart/form-data">
+    <section class="section-data-vendor p-sm-5">
+      <fieldset class="panel panel-info field-data-vendor">
+        <legend class="panel-heading">
+          <h2 class="panel-title">Dados do fornecedor</h2>
         </legend>
 
         <div class="panel-body">
           <!--  @FieldGroup   -->
-          <div class="row field-group">
+          <div class="field-group fs-display-flex fs-justify-content-space-between pb-4">
             <!--  @FormGroup Razão Social -->
-            <div class="col-xs-5">
+            <div class="col-lg-8 col-md-8 col-xs-10">
               <label class="fs-display-block" for="inputCompanyName" id="labelCompanyName">
                 Razão Social
               </label>
@@ -96,12 +101,12 @@
           </div>
 
           <!-- @FieldGroup   -->
-          <div class="row field-group">
+          <div class="field-group fs-display-flex fs-justify-content-space-between">
             <!--  @FormGroup Nome Fantasia -->
-            <div class="form-group">
+            <div class="col-lg-8 col-md-8 col-xs-10">
               <label for="inputTradeName" id="labelTradeName">Nome Fantasia</label>
               <input
-                type="text"
+                class="form-control" type="text"
                 name="inputTradeName"
                 id="inputTradeName"
                 required
@@ -112,10 +117,10 @@
             </div>
 
             <!--  @FormGroup Inscrição Estadual -->
-            <div class="form-group">
+            <div class="col-xs-5">
               <label for="inputStateRegistration" id="labelStateRegistration">Inscrição Estadual</label>
               <input
-                type="number"
+                class="form-control" type="number"
                 name="inputStateRegistration"
                 id="inputStateRegistration"
                 min="14"
@@ -127,12 +132,12 @@
           </div>
 
           <!-- @FieldGroup   -->
-          <div class="row field-group">
+          <div class="field-group fs-display-flex fs-justify-content-space-between pt-4 pb-4">
             <!--  @FormGroup CEP -->
-            <div class="form-group">
+            <div class="col-lg-5 col-md-5 col-xs-5">
               <label for="inputCEP" id="labelCEP">CEP</label>
               <input
-                type="text"
+                class="form-control" type="text"
                 name="inputCEP"
                 id="inputCEP"
                 required
@@ -143,12 +148,12 @@
             </div>
 
             <!--  @FormGroup Inscrição Municipal -->
-            <div class="form-group">
+            <div class="col-xs-4">
               <label for="inputMunicipalRegistration" id="labelMunicipalRegistration">
                 Inscrição Municipal
               </label>
               <input
-                type="text"
+                class="form-control" type="text"
                 name="inputMunicipalRegistration"
                 id="inputMunicipalRegistration"
                 pattern="\d{5,9}"
@@ -158,12 +163,12 @@
           </div>
 
           <!-- @FieldGroup   -->
-          <div class="row field-group">
+          <div class="field-group fs-display-flex fs-justify-content-space-between pb-4">
             <!--  @FormGroup Endereço -->
-            <div class="form-group">
+            <div class="col-md-8">
               <label for="inputAddress" id="labelAddress">Endereço</label>
               <input
-                type="text"
+                class="form-control" type="text"
                 name="inputAddress"
                 id="inputAddress"
                 required
@@ -172,10 +177,10 @@
             </div>
 
             <!--  @FormGroup Número -->
-            <div class="form-group">
+            <div class="col-xs-5">
               <label for="inputNumber" id="labelNumber">Número</label>
               <input
-                type="number"
+                class="form-control" type="number"
                 name="inputNumber"
                 id="inputNumber"
                 min="1"
@@ -188,12 +193,12 @@
           </div>
 
           <!-- @FieldGroup   -->
-          <div class="row field-group">
+          <div class="field-group fs-display-flex fs-justify-content-space-between pb-4">
             <!--  @FormGroup Complemento -->
-            <div class="form-group">
+            <div class="col-lg-12 col-md-12 col-xs-12">
               <label for="inputComplement" id="labelComplement">Complemento</label>
               <input
-                type="text"
+                class="form-control" type="text"
                 name="inputComplement"
                 id="inputComplement"
                 pattern="^[A-Za-z0-9\s]{2,100}$"
@@ -203,12 +208,12 @@
           </div>
 
           <!-- @FieldGroup   -->
-          <div class="row field-group">
+          <div class="field-group fs-display-flex fs-justify-content-space-between pb-4">
             <!--  @FormGroup Bairro -->
-            <div class="form-group">
+            <div class="col-xs-5">
               <label for="inputNeighborhood" id="labelNeighborhood">Bairro</label>
               <input
-                type="text"
+                class="form-control" type="text"
                 name="inputNeighborhood" id="inputNeighborhood"
                 pattern="^[A-Za-z0-9\s]{2,200}$"
                 title="Digite o nome do Estado (entre 2 e 200 caracteres)"
@@ -216,10 +221,10 @@
             </div>
 
             <!--  @FormGroup Município -->
-            <div class="form-group">
+            <div class="col-xs-5">
               <label for="inputCity" id="labelCity">Município</label>
               <input
-                type="text"
+                class="form-control" type="text"
                 name="inputCity"
                 id="inputCity"
                 pattern="^[A-Za-z\s]{2,200}$"
@@ -228,10 +233,10 @@
             </div>
 
             <!--  @FormGroup Estado -->
-            <div class="form-group">
+            <div class="col-xs-5">
               <label for="inputState" id="labelState">Estado</label>
               <input
-                type="text"
+                class="form-control" type="text"
                 name="inputState"
                 id="inputState"
                 pattern="^[A-Za-z\s]{2,100}$"
@@ -241,12 +246,12 @@
           </div>
 
           <!-- @FieldGroup   -->
-          <div class="row field-group">
+          <div class="field-group fs-display-flex fs-justify-content-space-between pb-4">
             <!--  @FormGroup Nome da Pessoa de Contato -->
-            <div class="form-group">
+            <div class="col-xs-7">
               <label for="inputContactName" id="labelContactName">Nome da Pessoa de Contato</label>
               <input
-                type="text"
+                class="form-control" type="text"
                 name="inputContactName"
                 id="inputContactName"
                 required
@@ -257,10 +262,10 @@
             </div>
 
             <!--  @FormGroup Telefone -->
-            <div class="form-group">
+            <div class="col-xs-5">
               <label for="inputPhone" id="labelPhone">Telefone</label>
               <input
-                type="text"
+                class="form-control" type="text"
                 name="inputPhone"
                 id="inputPhone"
                 required
@@ -271,10 +276,10 @@
             </div>
 
             <!--  @FormGroup E-mail -->
-            <div class="form-group">
+            <div class="col-xs-5">
               <label for="inputEmail" id="labelEmail">E-mail</label>
               <input
-                type="email"
+                class="form-control" type="email"
                 name="inputEmail"
                 id="inputEmail"
                 required
@@ -290,179 +295,188 @@
 
 
     <!--   @SectionProducts  -->
-    <section class="row section-products">
-      <fieldset class="field-group form-group field-products">
+    <section class="section-products p-sm-5">
+      <fieldset class="panel panel-info field-products">
         <!-- @FieldLegend Produtos -->
-        <legend>
-          <h2>Produtos</h2>
+        <legend class="panel-heading">
+          <h2 class="panel-title">Produtos</h2>
         </legend>
 
-        <!-- @FieldGroup Products   -->
-        <div class="row field-products">
-          <!-- @FieldGroup SingleProduct   -->
-          <fieldset class="field-group-product">
-            <legend>
-              <h2>Produto - 1</h2>
-            </legend>
-
-            <div class="form-group">
+        <div class="panel-body">
+          <!-- @FieldGroup Products   -->
+          <div class="field-products pb-4">
+            <!-- @FieldGroup SingleProduct   -->
+            <div class="col-lg-12 fs-display-flex align-items-center">
               <!--  @FormGroup Remover Produto -->
-              <button class="col btn btn-danger btn-remove-product">
-                Remover
+              <button class="mx-2 btn btn-danger btn-remove-product">
+                <i class="fi fi-rs-trash"></i>
               </button>
 
-              <!-- @ContainerDataProduct -->
-              <div class="container-data-product">
-                <figure class="col">
-                  <img src="" alt="Produto 1">
-                  <figcaption>Produto 1</figcaption>
-                </figure>
+              <fieldset class="field-group-product">
+                <legend class="w-auto px-2">
+                  Produto - 1
+                </legend>
 
-                <div class="form-group form-group-data-product">
-                  <!--  @FormGroup Nome do Produto -->
-                  <div class="col form-group">
-                    <label for="inputProductName" id="labelProductName">Nome do Produto</label>
-                    <input
-                      type="text"
-                      name="inputProductName"
-                      id="inputProductName"
-                      required
-                      aria-required="true"
-                      pattern="[A-Za-z\s1-9]{2,200}"
-                      title="A entrada deve ter entre 2 e 200 caracteres"
-                    >
+                <!-- @ContainerDataProduct -->
+                <div class="col-xs-11 container-data-product fs-display-flex flex-row ">
+                  <figure class="col-xs-2">
+                    <img class="img-product" src="./public/images/product/default.png" alt="Produto 1" width="70px"
+                         height="70px">
+                    <figcaption class="text-sm-start mt-3">Produto 1</figcaption>
+                  </figure>
+
+                  <div class="col-lg-12 form-group-data-product fs-display-flex flex-column">
+                    <!--  @FormGroup Nome do Produto -->
+                    <div class="col-xs-12 form-group">
+                      <label for="inputProductName" id="labelProductName">Nome do Produto</label>
+                      <input
+                        class="form-control" type="text"
+                        name="inputProductName"
+                        id="inputProductName"
+                        required
+                        aria-required="true"
+                        pattern="[A-Za-z\s1-9]{2,200}"
+                        title="A entrada deve ter entre 2 e 200 caracteres"
+                      >
+                    </div>
+
+                    <div class="form-group fs-display-flex align-items-center align-content-between">
+                      <!--  @FormGroup Unidade de Medida -->
+                      <div class="col-xs-3 form-group">
+                        <label for="inputMeasureUnit" id="labelMeasureUnit">Unidade de
+                          Medida</label>
+                        <input
+                          class="form-control" type="text"
+                          name="inputMeasureUnit"
+                          id="inputMeasureUnit"
+                          required
+                          aria-required="true"
+                          pattern="[A-Za-z\s]{2,50}"
+                          title="Digite uma Unidade de Medida válida (2 a 50 caracteres, incluindo letras e espaços)"
+                        >
+                      </div>
+
+                      <!--  @FormGroup Quantidade em Estoque -->
+                      <div class="col-xs-3 form-group">
+                        <label for="inputStockQuantity" id="labelStockQuantity">QDTDE. em
+                          Estoque</label>
+                        <input
+                          class="form-control" type="number"
+                          name="inputStockQuantity"
+                          id="inputStockQuantity"
+                          required
+                          aria-required="true"
+                          min="0" step="1"
+                        >
+                      </div>
+
+                      <!--  @FormGroup Valor Unitário -->
+                      <div class="col-xs-3 form-group">
+                        <label for="inputUnitPrice" id="labelUnitPrice">Valor Unitário</label>
+                        <input
+                          class="form-control" type="text"
+                          name="inputUnitPrice"
+                          id="inputUnitPrice"
+                          required
+                          aria-required="true"
+                          pattern="^\d{1,9}(\.\d{2})?$"
+                          title="Digite um Valor Unitário válido (máximo 9 dígitos, com até 2 casas decimais)"
+                        >
+                      </div>
+
+                      <!--  @FormGroup Valor Total -->
+                      <div class="col-xs-3 form-group">
+                        <label for="inputTotalPrice" id="labelTotalPrice">Valor Total</label>
+                        <input
+                          class="form-control" type="number"
+                          name="inputTotalPrice"
+                          id="inputTotalPrice"
+                          disabled
+                          required
+                          aria-required="true"
+                        >
+                      </div>
+                    </div>
                   </div>
-
-                  <div class="form-group">
-                    <!--  @FormGroup Unidade de Medida -->
-                    <div class="col form-group">
-                      <label for="inputMeasureUnit" id="labelMeasureUnit">Unidade de
-                        Medida</label>
-                      <input
-                        type="text"
-                        name="inputMeasureUnit"
-                        id="inputMeasureUnit"
-                        required
-                        aria-required="true"
-                        pattern="[A-Za-z\s]{2,50}"
-                        title="Digite uma Unidade de Medida válida (2 a 50 caracteres, incluindo letras e espaços)"
-                      >
-                    </div>
-
-                    <!--  @FormGroup Quantidade em Estoque -->
-                    <div class="col form-group">
-                      <label for="inputStockQuantity" id="labelStockQuantity">QDTDE. em
-                        Estoque</label>
-                      <input
-                        type="number"
-                        name="inputStockQuantity"
-                        id="inputStockQuantity"
-                        required
-                        aria-required="true"
-                        min="0" step="1"
-                      >
-                    </div>
-
-                    <!--  @FormGroup Valor Unitário -->
-                    <div class="col form-group">
-                      <label for="inputUnitPrice" id="labelUnitPrice">Valor Unitário</label>
-                      <input
-                        type="text"
-                        name="inputUnitPrice"
-                        id="inputUnitPrice"
-                        required
-                        aria-required="true"
-                        pattern="^\d{1,9}(\.\d{2})?$"
-                        title="Digite um Valor Unitário válido (máximo 9 dígitos, com até 2 casas decimais)"
-                      >
-                    </div>
-
-                    <!--  @FormGroup Valor Total -->
-                    <div class="col form-group">
-                      <label for="inputTotalPrice" id="labelTotalPrice">Valor Total</label>
-                      <input
-                        type="number"
-                        name="inputTotalPrice"
-                        id="inputTotalPrice"
-                        disabled
-                        required
-                        aria-required="true"
-                      >
-                    </div>
-                  </div>
+                  <!-- @ContainerDataProduct/ -->
                 </div>
-              </div>
-              <!-- @ContainerDataProduct/ -->
+              </fieldset>
+              <!-- @FieldGroup SingleProduct/   -->
             </div>
-          </fieldset>
-          <!-- @FieldGroup SingleProduct/   -->
-        </div>
-        <!-- @FieldGroup Products/   -->
-
-        <!--   @BtnAddProduct  -->
-        <button class="btn btn-success btn-add-product">
-          Adicionar Produto
-        </button>
-        <!--   @BtnAddProduct/  -->
+            <!--   @BtnAddProduct  -->
+            <button class="col-lg-12 col-xs-12 col-md-12 mt-4 btn btn-success btn-add-product">
+              Adicionar Produto
+            </button>
+            <!--   @BtnAddProduct/  -->
+          </div>
+          <!-- @FieldGroup Products/   -->
       </fieldset>
     </section>
     <!--   @SectionProducts/  -->
 
 
     <!--   @SectionAttachments  -->
-    <section class="row section-attachments">
-      <fieldset class="field-group form-group field-attachments">
+    <section class="section-attachments p-sm-5">
+      <fieldset class="panel panel-info field-attachments">
         <!-- @FieldLegend Anexos -->
-        <legend>
-          <h2>Anexos</h2>
+        <legend class="panel-heading">
+          <h2 class="panel-title">Anexos</h2>
         </legend>
 
-        <!-- @FieldsetAttachments   -->
-        <fieldset class="field-group fieldset-attachments">
-          <!-- @FieldLegend Itens -->
-          <legend>
-            <h3>Itens</h3>
-          </legend>
+        <div class="panel-body">
+          <!-- @FieldsetAttachments   -->
+          <fieldset class="field-group fieldset-attachments">
+            <!-- @FieldLegend Itens -->
+            <legend>
+              Itens
+            </legend>
 
-          <!-- @FieldGroup BoxesAttachment -->
-          <div class="row form-group boxes-attachment">
-            <!-- @FieldGroup BoxAttachment -->
-            <div class="row form-group box-attachment">
-              <!-- @ActionsBar -->
-              <div class="col-md actions-bar">
-                <button class="col btn-error btn-delete-attachment">
-                  Deletar
-                </button>
-                <button class="col btn-primary btn-view-attachment">
-                  Visualizar
-                </button>
+
+            <!-- @FieldGroup BoxesAttachment -->
+            <div class="boxes-attachment fs-display-flex flex-column ">
+              <!-- @FieldGroup BoxAttachment -->
+              <div
+                class="fs-display-flex gap-5 p-2 justify-content-start align-items-center align-content-center start box-attachment">
+                <!-- @ActionsBar -->
+                <div class="actions-bar">
+                  <button class="btn btn-danger btn-delete-attachment">
+                    <i class="fi fi-rs-trash"></i>
+                  </button>
+                  <button class="btn btn-info btn-view-attachment">
+                    <i class="fi fi-rs-eye"></i>
+                  </button>
+                </div>
+                <!-- @AttachmentDetails -->
+                <p class=" text-left">
+                  <strong>Documento anexo 1</strong>
+                </p>
               </div>
-
-              <!-- @AttachmentDetails -->
-              <p><strong>Documento anexo 1</strong></p>
             </div>
-          </div>
-        </fieldset>
-        <!-- @FieldGroup Attachments/   -->
+          </fieldset>
+          <!-- @FieldGroup Attachments/   -->
 
-        <!-- @BtnIncludeAttachment   -->
-        <button class="row form-group btn btn-success btn-include-attachment">
-          Incluir Anexo
-        </button>
-        <!--                <upload-component-->
-        <!--                        id="component-upload-attachment"-->
-        <!--                        theme-small="true"-->
-        <!--                        multiple="false"-->
-        <!--                ></upload-component>-->
-        <!-- @BtnIncludeAttachment/   -->
+          <!-- @BtnIncludeAttachment   -->
+          <button class="col-12 mt-3 btn btn-success btn-include-attachment">
+            Incluir Anexo
+          </button>
+          <!--                <upload-component-->
+          <!--                        id="component-upload-attachment"-->
+          <!--                        theme-small="true"-->
+          <!--                        multiple="false"-->
+          <!--                ></upload-component>-->
+          <!-- @BtnIncludeAttachment/   -->
+        </div>
       </fieldset>
     </section>
+
     <!--   @SectionAttachments/  -->
 
     <!--   @BtnSaveVendor  -->
-    <button type="submit" class="btn btn-success btn-save-vendor">
-      Salvar Fornecedor
-    </button>
+    <div class="p-2 mb-4">
+      <button type="submit" class="col-12 btn btn-success btn-save-vendor">
+        Salvar Fornecedor
+      </button>
+    </div>
     <!--   @BtnSaveVendor/  -->
   </form>
 </div>
