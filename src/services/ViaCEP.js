@@ -1,5 +1,12 @@
 $(document).ready(function () {
   // Busca API Via CEP
+   const inputCEP = document.getElementById("inputCEP");
+  const inputAddress = document.getElementById("inputAddress");
+  const inputNeighborhood = document.getElementById("inputNeighborhood");
+  const inputCity = document.getElementById("inputCity");
+  const inputState = document.getElementById("inputState");
+
+
   inputCEP.addEventListener("blur", function () {
     let cep = inputCEP.value.replace(/\D/g, '');
 

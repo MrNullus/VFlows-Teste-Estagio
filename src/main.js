@@ -4,16 +4,8 @@ $(document).ready(function () {
   let COUNT_PRODUCT = 1;
   let COUNT_ATTACHMENT = 0;
 
-  const inputCEP = document.getElementById("inputCEP");
-  const inputAddress = document.getElementById("inputAddress");
-  const inputNeighborhood = document.getElementById("inputNeighborhood");
-  const inputCity = document.getElementById("inputCity");
-  const inputState = document.getElementById("inputState");
 
-
-
-
-  // Atualizar valor do total do produto
+  // Produtos
   function calcularValorTotal() {
     const $valorTotalInput = $(".inputTotalPrice");
     let valorUnitario = parseFloat($valorUnitarioInput.val()) || 0;
@@ -24,10 +16,10 @@ $(document).ready(function () {
     $valorTotalInput.val(`${valorTotal.toFixed(2)}`);
   }
 
+  // Atualizar valor do total do produto
   $valorUnitarioInput.on("input", calcularValorTotal);
   $quantidadeEstoqueInput.on("input", calcularValorTotal);
 
-  // Produtos
   $('.btn-add-product').click((e) => {
     e.preventDefault();
     const containerProducts = $('.container-products');
