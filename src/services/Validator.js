@@ -61,5 +61,4 @@ class ValidatorForm {
   validate() {
     this.checkRequiredFields();
   }
-
 }
